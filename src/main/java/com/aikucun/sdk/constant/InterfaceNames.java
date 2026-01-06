@@ -1,19 +1,27 @@
 package com.aikucun.sdk.constant;
 
 /**
- * api接口名称常量
+ * @author gzl
  */
 public interface InterfaceNames {
 
-    /**
-     * 测试接口
-     */
-    String TEST = "test";
+    // --- 店铺相关 ---
+    String SHOP_INFO_GET = "shopInfoGet";
 
-    // 注意：部分接口文档可能使用 aikucun.* 作为前缀，当前 SDK 以实际对接的 nameEn 为准
+    // --- 商品相关 ---
+    String PRODUCT_CATEGORY_GET = "productCategoryGet";
+    String PRODUCT_SPU_GET = "productSpuGet";
+    String PRODUCT_SPU_LIST_GET = "productSpuListGet";
+    String PRODUCT_SKU_LIST_GET = "productSkuListGet";
 
-    /**
-     * 售后确认订单
-     */
-    String AFTERSALE_CONFIRM_ORDER = "mengxiang.aftersale.confirm.order";
+    // --- 订单相关 ---
+    String ORDER_SEND = "orderSend";
+    String ORDER_DETAIL_GET = "orderDetailGet";
+    String ORDER_LIST_GET = "orderListGet";
+
+    // --- 售后相关 ---
+    String AFTERSALE_LIST_GET = "afterSaleListGet";
+    String AFTERSALE_DETAIL_GET = "afterSaleDetailGet";
+    String AFTERSALE_SAVE_EXPRESS_INFO = "afterSaleSaveExpressInfo";
+    String AFTERSALE_UPDATE_EXPRESS_INFO = "afterSaleUpdateExpressInfo";
 }
