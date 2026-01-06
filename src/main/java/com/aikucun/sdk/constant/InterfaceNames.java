@@ -1,40 +1,24 @@
 package com.aikucun.sdk.constant;
 
 /**
- * Interface name constants used by {@code AikucunClient}.
- *
- * <p>Some constants may be kept here for backward compatibility. If you need a
- * clearer separation for deprecated/legacy API names, consider moving those
- * constants into {@link LegacyInterfaceNames} and keep this class as the set of
- * actively used interface names.
+ * Interface name constants for Aikucun/Mengxiang OpenAPI.
  */
 public final class InterfaceNames {
 
     private InterfaceNames() {
     }
 
-    /**
-     * Test interface (restored).
-     */
-    public static final String TEST = "mengxiang.test";
+    // aftersale APIs
+    public static final String AFTERSALE_CONFIRM = "mengxiang.aftersale.confirm";
+    public static final String AFTERSALE_CANCEL = "mengxiang.aftersale.cancel";
+    public static final String AFTERSALE_LIST = "mengxiang.aftersale.list";
+    public static final String AFTERSALE_DETAIL = "mengxiang.aftersale.detail";
+    public static final String AFTERSALE_SAVE_EXPRESS_INFO = "mengxiang.aftersale.saveExpressInfo";
+    public static final String AFTERSALE_UPDATE_EXPRESS_INFO = "mengxiang.aftersale.updateExpressInfo";
 
-    // ------------------------ After-sale ------------------------
-
-    /**
-     * After-sale: confirm order.
-     *
-     * <p>Required by {@code AikucunClient}.
-     */
-    public static final String AFTERSALE_CONFIRM_ORDER = "mengxiang.aftersale.confirm.order";
-
-    /**
-     * After-sale: save express info.
-     */
-    public static final String AFTERSALE_SAVE_EXPRESS_INFO = "mengxiang.aftersale.order.save.express.info";
-
-    /**
-     * After-sale: update express info.
-     */
-    public static final String AFTERSALE_UPDATE_EXPRESS_INFO = "mengxiang.aftersale.order.update.express.info";
-
+    // supply order APIs
+    public static final String SUPPLY_ORDER_CREATE = "mengxiang.supply.order.create";
+    public static final String SUPPLY_ORDER_SPLIT = "mengxiang.supply.order.split";
+    public static final String SUPPLY_ORDER_PAY = "mengxiang.supply.order.pay";
+    public static final String SUPPLY_ORDER_CANCEL_BEFORE_PAY = "mengxiang.supply.order.cancelBeforePay";
 }

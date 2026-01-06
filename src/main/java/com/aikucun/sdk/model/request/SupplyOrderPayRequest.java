@@ -1,23 +1,13 @@
 package com.aikucun.sdk.model.request;
 
 public class SupplyOrderPayRequest {
+    private String orderNo;
 
-    private String orderGroupNo;
-    private String thirdUserId;
-
-    public String getOrderGroupNo() {
-        return orderGroupNo;
+    public String getOrderNo() {
+        return orderNo;
     }
 
-    public void setOrderGroupNo(String orderGroupNo) {
-        this.orderGroupNo = orderGroupNo;
-    }
-
-    public String getThirdUserId() {
-        return thirdUserId;
-    }
-
-    public void setThirdUserId(String thirdUserId) {
-        this.thirdUserId = thirdUserId;
+    public void setOrderNo(String orderNo) {
+        this.orderNo = orderNo;
     }
 }

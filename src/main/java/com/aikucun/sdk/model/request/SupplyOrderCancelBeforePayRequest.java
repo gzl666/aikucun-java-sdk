@@ -1,23 +1,13 @@
 package com.aikucun.sdk.model.request;
 
 public class SupplyOrderCancelBeforePayRequest {
+    private String orderNo;
 
-    private String orderGroupNo;
-    private String refundReason;
-
-    public String getOrderGroupNo() {
-        return orderGroupNo;
+    public String getOrderNo() {
+        return orderNo;
     }
 
-    public void setOrderGroupNo(String orderGroupNo) {
-        this.orderGroupNo = orderGroupNo;
-    }
-
-    public String getRefundReason() {
-        return refundReason;
-    }
-
-    public void setRefundReason(String refundReason) {
-        this.refundReason = refundReason;
+    public void setOrderNo(String orderNo) {
+        this.orderNo = orderNo;
     }
 }

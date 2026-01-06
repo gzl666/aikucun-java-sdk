@@ -1,82 +1,91 @@
 package com.aikucun.sdk.config;
 
+/**
+ * SDK config.
+ */
 public class AikucunConfig {
 
-    private String appId;
-    private String appSecret;
+    private final String serverUrl;
+    private final String appid;
+    private final String appsecret;
+    private final String version;
+    private final String format;
 
-    private String baseUrl = "https://openapi.aikucun.com/route/rest";
-    private String version = "1.0";
-    private String format = "json";
-
-    private String accessToken;
-
-    /**
-     * If true, include accessToken into signing parameters.
-     */
-    private boolean signWithAccessToken = false;
-
-    public static AikucunConfig forSandbox(String appId, String appSecret) {
-        AikucunConfig c = new AikucunConfig();
-        c.setAppId(appId);
-        c.setAppSecret(appSecret);
-        c.setBaseUrl("https://openapi-sandbox.aikucun.com/route/rest");
-        return c;
+    private AikucunConfig(Builder b) {
+        this.serverUrl = b.serverUrl;
+        this.appid = b.appid;
+        this.appsecret = b.appsecret;
+        this.version = b.version;
+        this.format = b.format;
     }
 
-    public String getAppId() {
-        return appId;
+    public String getServerUrl() {
+        return serverUrl;
     }
 
-    public void setAppId(String appId) {
-        this.appId = appId;
+    public String getAppid() {
+        return appid;
     }
 
-    public String getAppSecret() {
-        return appSecret;
-    }
-
-    public void setAppSecret(String appSecret) {
-        this.appSecret = appSecret;
-    }
-
-    public String getBaseUrl() {
-        return baseUrl;
-    }
-
-    public void setBaseUrl(String baseUrl) {
-        this.baseUrl = baseUrl;
+    public String getAppsecret() {
+        return appsecret;
     }
 
     public String getVersion() {
         return version;
     }
 
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
     public String getFormat() {
         return format;
     }
 
-    public void setFormat(String format) {
-        this.format = format;
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public String getAccessToken() {
-        return accessToken;
-    }
+    public static final class Builder {
+        private String serverUrl;
+        private String appid;
+        private String appsecret;
+        private String version = "1.0";
+        private String format = "json";
 
-    public void setAccessToken(String accessToken) {
-        this.accessToken = accessToken;
-    }
+        public Builder serverUrl(String serverUrl) {
+            this.serverUrl = serverUrl;
+            return this;
+        }
 
-    public boolean isSignWithAccessToken() {
-        return signWithAccessToken;
-    }
+        public Builder appid(String appid) {
+            this.appid = appid;
+            return this;
+        }
 
-    public void setSignWithAccessToken(boolean signWithAccessToken) {
-        this.signWithAccessToken = signWithAccessToken;
+        public Builder appsecret(String appsecret) {
+            this.appsecret = appsecret;
+            return this;
+        }
+
+        public Builder version(String version) {
+            this.version = version;
+            return this;
+        }
+
+        public Builder format(String format) {
+            this.format = format;
+            return this;
+        }
+
+        public AikucunConfig build() {
+            if (serverUrl == null || serverUrl.isBlank()) {
+                throw new IllegalArgumentException("serverUrl is required");
+            }
+            if (appid == null || appid.isBlank()) {
+                throw new IllegalArgumentException("appid is required");
+            }
+            if (appsecret == null || appsecret.isBlank()) {
+                throw new IllegalArgumentException("appsecret is required");
+            }
+            return new AikucunConfig(this);
+        }
     }
 }
